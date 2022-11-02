@@ -1,0 +1,10 @@
+.gitignore
+.npmignore
+api.ts
+api/auth-controller-api.ts
+base.ts
+common.ts
+configuration.ts
+git_push.sh
+model/index.ts
+model/register-request.ts

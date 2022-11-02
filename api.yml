@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: socialApp API
+  description: generovani api pro soicalApp
+  version: 0.1.9
+
+paths:
+  /api/v1/user/register:
+    post:
+      tags:
+        - AuthController
+      summary: register.
+      description: registers a user.
+      operationId: registerUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: 'components/schemas/RegisterRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+components:
+  schemas:
+    RegisterRequest:
+      required:
+        - username
+        - firstname
+        - lastname
+        - email
+        - password
+      type: object
+      properties:
+        username:
+          type: string
+          nullable: false
+        firstname:
+          type: string
+          nullable: false
+        lastname:
+          type: string
+          nullable: false
+        email:
+          type: string
+          nullable: false
+        password:
+          type: string
+          nullable: false
